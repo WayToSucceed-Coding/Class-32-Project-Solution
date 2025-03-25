@@ -65,11 +65,14 @@ game_state = 'start'
 font=pygame.font.Font(None,36)
 
 def reset():
-    global game_state,score,lives
+    global game_state,score,lives,spawn_interval,difficulty_timer,objects
 
     game_state='play'
     score=0
     lives=3
+    spawn_interval=2000
+    difficulty_timer=pygame.time.get_ticks()
+    objects=[]
 
 while running:
     for event in pygame.event.get():
